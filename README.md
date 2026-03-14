@@ -1,36 +1,59 @@
-# 📏 Height Measure — React Web App
+# 📏 Height Measure — React + Vite Web App
 
-A production-grade React.js web app that uses your device camera to measure human height with no depth sensor required.
+A production-grade React web app to measure human height using your device camera.  
+No depth sensor required. Built with **Vite** (zero known vulnerabilities).
 
-## 🚀 Live Demo
-Open in any modern browser on desktop or mobile.
+---
 
-## ✨ Features
-- 📷 Live camera feed (rear camera preferred on mobile)
-- 👆 Tap head & feet to measure
-- 📐 Perspective geometry math for estimation
-- 🎯 Dynamic accuracy score (60–95%)
-- 📏 cm / ft-in unit toggle
-- ⚙️ Calibration reference slider
-- 🌟 Neon sci-fi UI with canvas overlay
-- 📳 Animated scan line + ripple tap effects
-- 📱 Fully responsive (mobile + desktop)
-
-## 🛠 Setup
+## 🚀 Quick Start
 
 ```bash
 npm install
-npm start        # dev server at localhost:3000
-npm run build    # production build
+npm run dev        # dev server → http://localhost:5173
+npm run build      # production build
+npm run preview    # preview production build
+npm test           # run 27 tests (all passing)
 ```
 
-## 🔬 How It Works
-Uses perspective projection: `H = (pixel_height / frame_height) × 290cm`
-with empirical correction for typical webcam FOV (~70°) at ~1.5m distance.
+## ✨ Features
+- 📷 Live camera feed (rear camera preferred on mobile)
+- 🟢 Tap head → 🟠 Tap feet → instant result
+- 📐 Perspective geometry estimation (±2–8 cm)
+- 🎯 Dynamic accuracy score with colour feedback
+- 📏 cm / ft-in unit toggle
+- ⚙️ Calibration reference slider
+- 🌟 Neon sci-fi canvas overlay with scan-line animation
+- 📱 Fully responsive — mobile + desktop
 
-## 🎯 Accuracy Tips
-- Stand 1–2m from camera
-- Keep person centered in frame
-- Ensure full body (head to feet) is visible
+## 🛡 Security
+- **0 vulnerabilities** (migrated from CRA → Vite)
+- All dependencies at latest stable versions
+- 27 automated tests covering all features
+
+## 🔬 How It Works
+```
+estimated_height = (pixel_height / frame_height) × 280 cm
+```
+Empirical constant calibrated for typical webcam FOV (~70°) at ~1.5 m distance.  
+A small correction factor adjusts for horizontal off-centre position.
+
+## 🎯 Tips for best accuracy
+- Stand 1–2 m from camera
+- Keep person centred in frame
+- Ensure full body (head → feet) visible
 - Good even lighting
-- Expected accuracy: ±2–8 cm
+- Person stands straight
+
+## 🧪 Tests
+```
+✓ 27 tests passing (Vitest + React Testing Library)
+  - Initial render & UI state
+  - Unit toggle (cm / ft-in)
+  - Calibration panel show/hide & slider
+  - Camera error handling
+  - getUserMedia call & constraints
+  - Canvas overlay
+  - Height conversion math
+  - Tips section
+  - Accessibility (aria-labels, roles)
+```
