@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Height Measure</string>
+    <string name="measure_btn">MEASURE HEIGHT</string>
+    <string name="reset_btn">Reset</string>
+    <string name="calibrate_btn">Calibrate</string>
+    <string name="instruction_idle">📏 Point camera at a person standing upright</string>
+    <string name="instruction_tap_head">📍 Tap the TOP of the person\'s head</string>
+    <string name="instruction_tap_feet">👣 Now tap the FEET / ground level</string>
+    <string name="instruction_measuring">⚡ Calculating height…</string>
+    <string name="instruction_done">✅ Measurement complete!</string>
+    <string name="tips_title">Tips for Best Accuracy</string>
+    <string name="tip1">• Stand person 1–2m from camera</string>
+    <string name="tip2">• Keep person centered in frame</string>
+    <string name="tip3">• Ensure full body is visible</string>
+    <string name="tip4">• Hold phone steady at eye level</string>
+    <string name="tip5">• Use in good lighting</string>
+    <string name="camera_permission_message">Camera permission is required to measure height</string>
+</resources>
